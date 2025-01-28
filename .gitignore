@@ -1,0 +1,9 @@
+# .gitignore
+# Ignore compiled files and sensitive files
+target/
+dbt_packages/
+logs/
+.env
+*.log
+*.pyc
+.DS_Store

@@ -1,0 +1,49 @@
+
+
+models:
+  - name: base_employees
+    description: "Base model that pulls raw data from the HR employees table."
+    columns:
+      - name: employee_id
+        description: "Unique identifier for an employee."
+        tests:
+          - unique
+          - not_null
+      - name: department_id
+        description: "The department to which the employee belongs."
+        tests:
+          - not_null
+      - name: salary
+        description: "Salary of the employee."
+        tests:
+          - not_null
+
+  - name: employees_ordered_by_salary
+    description: "Model that ranks employees within each department based on their salary."
+    columns:
+      - name: employee_id
+        description: "Unique identifier for an employee."
+        tests:
+          - unique
+          - not_null
+      - name: rn
+        description: "Rank of the employee within their department based on salary."
+        tests:
+          - not_null
+
+  - name: highest_earning_employees
+    description: "Model that filters out the top 3 earners per department."
+    columns:
+      - name: employee_id
+        description: "Unique identifier for an employee."
+        tests:
+          - unique
+          - not_null
+      - name: department_id
+        description: "The department to which the employee belongs."
+        tests:
+          - not_null
+      - name: salary
+        description: "Salary of the employee."
+        tests:
+          - not_null
